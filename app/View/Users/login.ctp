@@ -22,6 +22,6 @@
   </fieldset>
  <div class="submit">
      <input type="submit" value="Login" class="btn btn-success">
-     <input type="button" onclick="location.href='users/register';" value="Register" class="btn btn-success">
+     <input type="button" onclick="location.href='/users/register';" value="Register" class="btn btn-success">
  </div>
  <?php   echo $this->Form->end(); ?>

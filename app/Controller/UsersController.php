@@ -14,8 +14,33 @@ class UsersController extends AppController {
         }
     }
 
+    public function index() {
+
+    }
+
+    public function register() {
+        if ($this->request->is('post')) {
+            if ($this->User->save($this->request->data['User'])) {
+                $id = $this->User->id;
+                
+                if (!empty($id)) {
+                   $this->Session->setFlash('User Registered Successful .');    
+                   $this->redirect('/home');
+                } else {
+                    $this->Session->setFlash('Unable to add Role.');
+                    $this->redirect('/users/register');
+                }
+            }
+        }
+    }
+
     public function logout() {
         $this->redirect($this->Auth->logout());
     }
 
+     function beforeFilter() {
+
+        $this->Auth->allow('login', 'logout','register');
+
+    }
 }

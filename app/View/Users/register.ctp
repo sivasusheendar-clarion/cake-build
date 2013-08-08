@@ -1,5 +1,5 @@
 <?php
-            echo $this->Form->create('Users', array("controller" => "users", "action" => "login", "method" => "post","class"=>"form-horizontal"));    
+            echo $this->Form->create('Users', array("controller" => "users", "action" => "register", "method" => "post","class"=>"form-horizontal"));    
  ?>
  <fieldset>
     <legend>Register  !</legend>
