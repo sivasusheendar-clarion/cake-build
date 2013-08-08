@@ -22,7 +22,7 @@ class UsersController extends AppController {
         if ($this->request->is('post')) {
             if ($this->User->save($this->request->data['User'])) {
                 $id = $this->User->id;
-                
+                // TEST OCMMENT 
                 if (!empty($id)) {
                    $this->Session->setFlash('User Registered Successful .');    
                    $this->redirect('/home');
