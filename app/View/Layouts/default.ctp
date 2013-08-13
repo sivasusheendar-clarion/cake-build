@@ -17,6 +17,9 @@
             h3{
                 color: #ffffff;
             }
+            h2{
+                color: #000000;
+            }
             .bs-masthead {
                 padding-bottom: 165px;
                 padding-top: 80px;

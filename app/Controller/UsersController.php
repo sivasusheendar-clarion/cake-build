@@ -1,18 +1,18 @@
 <?php
 
 class UsersController extends AppController {
-    
+
     public function login() {
         if ($this->request->is('post')) {
 
             if ($this->Auth->login()) {
-                
+
                 if ($this->Auth->user('role') ==  1) {
                     $this->Auth->loginRedirect = array('controller' => 'home', 'action' => 'index','admin'=>true);
                 } else {
                     $this->Auth->loginRedirect = array('controller' => 'home', 'action' => 'index');
                 }
-               
+
                 return $this->redirect($this->Auth->loginRedirect);
                 //
                 // Prior to 2.3 use `return $this->redirect($this->Auth->redirect());`
@@ -55,18 +55,30 @@ class UsersController extends AppController {
      function beforeFilter() {
         $this->Auth->allow('login', 'logout','register');
     }
-    
+
     /* Admin section starts */
      public function admin_index() {
              $this->set('users', $this->User->find('all'));
     }
-    
-     public function admin_view() {
-             $this->set('users', $this->User->find('all'));
+
+     public function admin_view($id) {
+            $this->User->id = $id;
+            $this->set('User', $this->User->read());
     }
-    
-     public function admin_edit() {
-             $this->set('users', $this->User->find('all'));
+
+     public function admin_edit($id) {
+        $this->User->id = $id;
+
+        if ($this->request->is('get')) { 
+            $this->request->data = $this->User->read();
+        } else {
+            if ($this->User->save($this->request->data)) {
+                $this->Session->setFlash('User updated successfully');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash('User not updated');
+            }
+        }
     }
-    
+
 }
