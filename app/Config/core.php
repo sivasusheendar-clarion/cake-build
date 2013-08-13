@@ -348,3 +348,6 @@ Cache::config('_cake_model_', array(
 	'serialize' => ($engine === 'File'),
 	'duration' => $duration
 ));
+
+/* Add the following text to turn on 'admin' routing */
+	Configure::write('Routing.admin', 'admin');

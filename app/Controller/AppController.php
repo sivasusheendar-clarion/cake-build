@@ -53,10 +53,13 @@ class AppController extends Controller {
     public $user;
 
     function beforeFilter() {
-        
-       
-
-    }
+        if ($this->params['admin']) {  
+            if($this->Session->check('User') == false) { 
+                $this->flash("The URL you\'ve followed requires you login.",'/login',2);
+            }
+            $this->layout = 'admin';
+        }
+    } 
 
     public function beforeRender() {
         $this->set('user', $this->user);

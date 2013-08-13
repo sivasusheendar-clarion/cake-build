@@ -10,5 +10,9 @@
             <?php echo $this->element('profile')?>  
         </div><!--/.nav-collapse -->
     </div>
+    
+
+
 </div>
+
 

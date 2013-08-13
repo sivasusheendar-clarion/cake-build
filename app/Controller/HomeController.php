@@ -7,6 +7,12 @@ class HomeController extends AppController {
             //   return $this->redirect($this->Auth->logoutRedirect);
         }
     }
+    
+    function admin_index() {
+            
+            
+    }
+
 
     function beforeFilter() {
         $this->Auth->allow('index', 'view', 'login', 'home');

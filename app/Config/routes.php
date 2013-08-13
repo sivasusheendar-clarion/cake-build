@@ -31,6 +31,13 @@
  * ...and connect the rest of 'Pages' controller's urls.
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+        
+/**
+* ...and connect to /admin/pages/index by default.
+*/
+                Router::connect('/admin', array('controller' => 'users', 'action' => 'login', 'admin' => true));
+                
+                Router::connect('/admin/:controller/:action/*', array( 'action' => null, 'prefix' => 'admin', 'admin' => true)); 
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on
