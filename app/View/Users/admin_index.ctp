@@ -1,7 +1,7 @@
 <!-- File: /app/View/Posts/index.ctp -->
 
 <h2>USER'S</h2>
-<table>
+<table class="table table-hover">
     <tr>
         <th>ID</th>
         <th>E-mail</th>
