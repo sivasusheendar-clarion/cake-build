@@ -24,4 +24,7 @@
      <input type="submit" value="Login" class="btn btn-success">
      <input type="button" onclick="location.href='/users/register';" value="Register" class="btn btn-success">
  </div>
+ <div>
+     <a href='/users/forgotpassword/'>Forgot Password ?</a>
+ </div>
  <?php   echo $this->Form->end(); ?>

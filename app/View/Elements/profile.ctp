@@ -11,6 +11,11 @@ if(isset($userData['User'])) {
       <li <?php echo ($this->params['controller'] == 'home')? 'class="active"' : ''?>><a href="/admin/home">Home</a></li>
       <li <?php echo ($this->params['controller'] == 'users')? 'class="active"' : ''?>><a href="/admin/users">Users</a></li>
   <?php } ?>
+  
+  <?php    if($userData['User']['role']!=1) {  ?>
+      <li <?php echo ($this->params['controller'] == 'home')? 'class="active"' : ''?>><a href="/home">Profile</a></li>
+  <?php } ?>
+  
  </ul>
 <?php
 } 

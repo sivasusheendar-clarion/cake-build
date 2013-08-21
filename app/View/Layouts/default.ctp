@@ -39,8 +39,9 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <?php
-    echo $this->Html->script("jquery");
+   /* echo $this->Html->script("jquery");*/
     echo $this->Html->script("bootstrap");
     /*echo $this->Html->script("bootstrap-transition");
     echo $this->Html->script("bootstrap-alert");
@@ -55,6 +56,16 @@
     echo $this->Html->script("bootstrap-carousel");
     echo $this->Html->script("bootstrap-typeahead");*/
     ?>
+    
+<script>
+    $(document).ready(function(){
+        $('#profile').hide();
+        $('#profile_button').click(function(){
+            $('#profile').toggle();
+        });
+
+    });
+ </script>
    <div class="panel-footer">
     <div class="container">Copyright@ Cake Build</div>
     </div>
