@@ -2264,6 +2264,9 @@ input[type="button"].btn-block {
 
 .open > .dropdown-menu {
   display: block;
+   height: 262px;
+    width: 242px;
+    padding-bottom: 10px;
 }
 
 .open > a {
@@ -2564,6 +2567,11 @@ button.close {
 .nav > li {
   position: relative;
   display: block;
+ /* Siva */
+     
+    float: left;
+    padding-left: 76px;
+    
 }
 
 .nav > li > a {
